@@ -1,34 +1,181 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <body>
-        <h1>Wassup!</h1>
-        <p>Hi there</p>
-        <strong>Hi also</strong><br>
-        <b>one more bold</b><br>
-        <a href="https://www.google.com/">Click this to open Google</a><br>
-        <img src="download.jpeg" style = "width : 200px ; height : 100px" alt = "Image">
-        <table border = 1 cellpadding = "10" cellspacing = "10">
-            <tr>
-                <th>Roll number</th>
-                <th>Name</th>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>Sutej R Haritsa</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Sudeep Xavier Roche</td>
-            </tr>
-        </table>
-        <ul>
-            <li>Milk</li>
-        </ul>
-    </body>
-    <form action = "">
-        <label for = "username">What is your username</label>
-        <input type = "text" id = "username" name = "username" placeholder = "Enter username">
-        <input type = "password" id = "password" name = "password" placeholder = "Enter password"><br>
-        <button> Submit</button>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      z-index: 999;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #ff7f50;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 80px;
+      text-align: center;
+      color: white;
+    }
+
+    #home {
+      background: linear-gradient(to right, #667eea, #764ba2);
+      font-size: 2.5rem;
+    }
+
+    #about {
+      background: linear-gradient(to right, #ff9966, #ff5e62);
+      font-size: 1.5rem;
+      padding: 0 20px;
+    }
+
+    #skills {
+      background: linear-gradient(to right, #43cea2, #185a9d);
+      flex-direction: column;
+    }
+
+    #contact {
+      background: linear-gradient(to right, #bdc3c7, #2c3e50);
+      flex-direction: column;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      width: 80%;
+    }
+
+    .skills-grid div {
+      background: white;
+      color: #333;
+      padding: 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+
+    .skills-grid div:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      width: 300px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: inherit;
+    }
+
+    .contact-form button {
+      background: #333;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background: #ff7f50;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        gap: 20px;
+      }
+
+      #home {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="home">
+    <div>Hi, I'm <strong>Sutej R Haritsa</strong> <br>Welcome to my Portfolio</div>
+  </section>
+
+  <section id="about">
+    <div>
+      I'm Sutej R Haritsa, a student for RVCE, CY trying to learn the basics of web development.
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-grid">
+      <div>HTML</div>
+      <div>CSS</div>
+      <div>JavaScript</div>
+      <div>Git & GitHub</div>
+      <div>Responsive Design</div>
+      <div>Bootstrap</div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 style="margin-bottom: 20px;">Get in Touch</h2>
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
     </form>
+  </section>
+
+</body>
 </html>
